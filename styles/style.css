@@ -1,39 +1,56 @@
 form {
     margin: 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 20% 10px 20%;
     font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+div {
+    cursor: auto;
+}
+
 label {
-    display: block;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+label.label-normal {
     font-weight: normal;
-    /* margin-bottom: 10px;
-    margin-left: 5px; */
+    font-size: medium;
+    vertical-align: top;
 }
 
 span {
     display: inline-block;
-    padding: 10px 5px 10px 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-span.block-half-quarter {
-    width: 11.5%;
+span.block-tiny {
+    width: calc(11% + 1px);
+}
+
+span.block-small {
+    width: calc(16.5% + 2px);
 }
 
 span.block-quarter {
-    width: 24%;
+    width: 22.5%;
+    min-width: 252px;
 }
 
 span.block-half {
-    width: 49%;
+    width: calc(45% + 6px);
+    min-width: 420px;
 }
 
 span.block-wide {
-    width: 74%;
+    width: 72%;
+    min-width: 420px;
 }
 
 span.block-full {
-    width: 99%;
+    width: 100%;
+    min-width: 420px;
 }
 
 input[type=text],
@@ -45,7 +62,7 @@ input[type=time],
 select {
     display: block;
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 20px;
     box-sizing: border-box;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
@@ -85,28 +102,79 @@ select:focus {
 
 input[type=submit],
 input[type=button] {
-    background: green;
-    padding: 8px 15px 8px 15px;
+    padding: 20px 30px 20px 30px;
     border: none;
     color: #fff;
+    font-size: large;
+    background: grey;
+    width: 150px;
+}
+
+input[type=submit].save {
+    background: green;
 }
 
 input[type=submit]:hover,
 input[type=button]:hover {
-    background: darkgreen;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+    background: darkgrey;
 }
 
+input[type=submit].save:hover {
+    background: darkgreen;
+}
 
-/*
-.form-style-1 .field-select {
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    padding-top: 10px;
+}
+
+.select-css {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url("flecha.png"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
     width: 100%;
 }
 
-.form-style-1 .field-textarea {
-    height: 100px;
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
-*/
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        background-color: lightblue;
+        padding: 10px 10px 10px 10px;
+        margin: 0px;
+    }
+    span {
+        display: inline-block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    span.block-tiny,
+    span.block-small,
+    span.block-quarter,
+    span.block-half,
+    span.block-wide,
+    span.block-full {
+        width: 100%;
+    }
+}

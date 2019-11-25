@@ -16,7 +16,7 @@ class VeiculoController extends Controller
 
     function create()
     {
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["save"])) {
 
             $veiculo = new Veiculo();
 
@@ -36,7 +36,7 @@ class VeiculoController extends Controller
 
         $d["veiculo"] = $veiculo->get($id);
 
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["save"])) {
             if ($veiculo->update($this->map())) {
                 header("Location: " . WEBROOT);
             }

@@ -1,8 +1,8 @@
 <?php
 
 define('BD_SERVIDOR','localhost');
-define('BD_USUARIO','phpmyadmin');
-define('BD_SENHA','DarkKnight99*');
+define('BD_USUARIO','root');
+define('BD_SENHA','');
 define('BD_BANCO','treinamento');
 
 class Database

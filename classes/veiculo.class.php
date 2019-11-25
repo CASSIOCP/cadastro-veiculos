@@ -55,6 +55,9 @@ class Veiculo extends Base
         $sql = "UPDATE " . self::TABELA . " SET descricao = ?, placa = ?, codigoRenavam = ?, anoModelo = ?, anoFabricacao = ?, cor = ?, km = ?, marca = ?, preco = ?, precoFipe = ? WHERE id = ?";
 
         $params = $this->parse($model);
+
+        echo var_dump($params);
+
         $conexao = Database::connect();
         $comando = $conexao->prepare($sql);
         $comando->bind_param(
